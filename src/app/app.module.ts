@@ -38,6 +38,7 @@ import { PagesRegisterComponent } from './pages/pages-register/pages-register.co
 import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
+import { LoginServiceComponent } from './login-service/login-service.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
     PagesRegisterComponent,
     PagesLoginComponent,
     PagesError404Component,
-    PagesBlankComponent
+    PagesBlankComponent,
+    LoginServiceComponent
   ],
   imports: [
     BrowserModule,
