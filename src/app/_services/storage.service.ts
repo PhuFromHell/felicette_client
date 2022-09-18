@@ -8,6 +8,7 @@ const USER_KEY = 'auth-user';
 export class StorageService {
 
   constructor() { }
+
   clean(): void {
     window.localStorage.clear();
   }
@@ -24,6 +25,7 @@ export class StorageService {
     }
     return {};
   }
+  
   public isLoggedIn(): boolean {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
