@@ -33,6 +33,11 @@ import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/pages-register/pages-register.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 
+import { HomeComponent } from './pages/home/home/home.component'; 
+import { BoardUserComponent } from './pages/board-user/board-user/board-user.component';
+import { BoardModeratorComponent } from './pages/board-moderator/board-moderator/board-moderator.component';
+import { BoardAdminComponent } from './pages/board-admin/board-admin/board-admin.component';
+
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -67,6 +72,11 @@ const routes: Routes = [
   { path: 'pages-login', component: PagesLoginComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
+
+  { path: 'home', component: HomeComponent}, 
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
 ];
 
 @NgModule({
