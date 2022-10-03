@@ -58,7 +58,14 @@ typescript                      4.7.4
 
 
 
-
+---------------------------------
+CORS_Enabled
+---------------------------------
+trong qua trinh su ly jwt bi block 
+Cách khắc phục triệt để nhất là server sẽ config enable CORS lên để phía client có thể call được dữ liệu 
+     -->> xem tại https://www.w3.org/wiki/CORS_Enabled
+cách thứ hai là tắt CROS trực tiếp trên trình duyệt bằng cách chạy câu lện bên dưới
+     -->>C:\Users\hoang>"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
 
 
 
