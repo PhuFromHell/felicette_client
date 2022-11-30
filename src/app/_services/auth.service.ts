@@ -50,7 +50,7 @@ export class AuthService {
     );
   }
 
-  logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', {}, httpOptions);
-  }
+  // logout(): Observable<any> {
+  //   return this.http.post(AUTH_API + 'signout', {}, httpOptions);
+  // }
 }

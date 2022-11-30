@@ -55,7 +55,7 @@ Package                         Version
 @schematics/angular             14.0.6
 rxjs                            7.5.6
 typescript                      4.7.4
-
+@angular/material": "^7.0.0
 
 
 ---------------------------------
