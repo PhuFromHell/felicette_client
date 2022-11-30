@@ -38,6 +38,7 @@ export class PagesLoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
         this.reloadPage();
+        window.location.href = 'http://localhost:4200/dashboard';
       },
       error: err => {
         this.errorMessage = err.error.message;
