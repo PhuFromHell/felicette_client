@@ -37,6 +37,7 @@ import { HomeComponent } from './pages/home/home/home.component';
 import { BoardUserComponent } from './pages/board-user/board-user/board-user.component';
 import { BoardModeratorComponent } from './pages/board-moderator/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './pages/board-admin/board-admin/board-admin.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -77,6 +78,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'orders', component: OrdersComponent },
 ];
 
 @NgModule({

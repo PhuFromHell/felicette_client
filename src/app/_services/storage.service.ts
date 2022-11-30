@@ -6,7 +6,7 @@ const USER_KEY = 'auth-user';
   providedIn: 'root'
 })
 export class StorageService {
-  constructor() { }
+  constructor() {}
 
   clean(): void {
     window.sessionStorage.clear();
@@ -25,7 +25,6 @@ export class StorageService {
 
     return {};
   }
-
   public isLoggedIn(): boolean {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
