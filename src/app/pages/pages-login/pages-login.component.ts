@@ -13,16 +13,12 @@ export class PagesLoginComponent implements OnInit {
     username: null,
     password: null
   };
-
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(
-    private authService: AuthService,
-    private storageService: StorageService
-  ) { }
+  constructor(private authService: AuthService, private storageService: StorageService) { }
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
@@ -33,13 +29,16 @@ export class PagesLoginComponent implements OnInit {
 
   onSubmit(): void {
     const { username, password } = this.form;
+
     this.authService.login(username, password).subscribe({
       next: data => {
         this.storageService.saveUser(data);
+
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
         this.reloadPage();
+        window.location.href = 'http://localhost:4200/dashboard';
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -47,8 +46,8 @@ export class PagesLoginComponent implements OnInit {
       }
     });
   }
+
   reloadPage(): void {
     window.location.reload();
   }
-
 }

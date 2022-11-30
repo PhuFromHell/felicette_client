@@ -41,9 +41,16 @@ import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+<<<<<<< HEAD
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 
+=======
+import { HomeComponent } from './pages/home/home/home.component';
+import { BoardAdminComponent } from './pages/board-admin/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './pages/board-moderator/board-moderator/board-moderator.component'; 
+import { BoardUserComponent } from './pages/board-user/board-user/board-user.component'; 
+>>>>>>> login_function
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +88,11 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     PagesRegisterComponent,
     PagesLoginComponent,
     PagesError404Component,
-    PagesBlankComponent
+    PagesBlankComponent,
+    HomeComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
   ],
   imports: [
     BrowserModule,
