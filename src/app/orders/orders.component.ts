@@ -7,7 +7,12 @@ import { FormArray, FormBuilder, FormGroup, FormGroupName } from '@angular/forms
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-
+  states: string[] = [
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas'
+  ];
   name = 'Angular';
 
   productForm: FormGroup;
@@ -28,8 +33,10 @@ export class OrdersComponent implements OnInit {
 
   newQuantity(): FormGroup {
     return this.fb.group({
-      qty: '',
+      t_shirt_name: '',
+      size: '',
       price: '',
+      sponsor_fc: '',
     })
   }
 

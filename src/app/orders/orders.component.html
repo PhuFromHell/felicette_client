@@ -1,40 +1,47 @@
 <main id="main" class="main">
     <div class="row">
-
         <div class="card">
             <div class="card-body">
                 <form action="" method="post" [formGroup]="productForm" (ngSubmit)="onSubmit()">
-                    <div class="card-title">
-                        <label class="col-sm-11" style="font-size: large;">Add Order</label>
-                        <button type="button" class="btn btn-primary">Save</button>
+                    <div class="row">
+                        <div class="card-title pr-0">
+                            <label class="col-sm-11 col-9" style="font-size: large;">Add Order</label>
+                            <button type="button" class="btn btn-primary pr-0 mr-0">Save</button>
+                        </div>
                     </div>
 
                     <div class="row mb-3">
                         <label class="col-md-2 col-sm-2 col-form-label">Customer Name</label>
-                        <div class="col-md-3 col-sm-10"> <input type="text" id="customer_name" class="form-control">
+                        <div class="col-md-3 col-sm-10">
+                            <input type="text" id="customer_name" class="form-control" />
                         </div>
                         <label class="col-md-2 col-sm-2 col-form-label">Contract</label>
-                        <div class="col-md-2 col-sm-10"> <input id="contract" type="text" class="form-control"></div>
+                        <div class="col-md-2 col-sm-10">
+                            <input id="contract" type="text" class="form-control" />
+                        </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="inputDate" class="col-md-2 col-sm-2 col-form-label ">email</label>
-                        <div class="col-md-2 col-sm-10"> <input type="date" class="form-control"></div>
+                        <div class="col-md-2 col-sm-10"> <input type="text" id="customer_name" class="form-control" />
+                        </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="inputDate" class="col-md-2 col-sm-2 col-form-label ">Estimated Delivery</label>
-                        <div class="col-md-2 col-sm-10"> <input type="date" class="form-control"></div>
+                        <div class="col-md-2 col-sm-10"> <input type="date" class="form-control" /></div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="profileImage" class="col-md-2 col-sm-2 col-form-label">Item Image</label>
                         <div class="col-md-3 col-sm-10">
                             <img src="assets/img/ao1.jpg" alt="Profile">
-                            <div class="pt-2"> <a href="#" class="btn btn-primary btn-sm"
-                                    title="Upload new profile image"><i class="bi bi-upload"></i></a> <a href="#"
-                                    class="btn btn-danger btn-sm" title="Remove my profile image"><i
-                                        class="bi bi-trash"></i></a></div>
+                            <div class="pt-2">
+                                <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"> <i
+                                        class="bi bi-upload"></i> </a>
+                                <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"> <i
+                                        class="bi bi-trash"></i></a>
+                            </div>
                         </div>
                     </div>
 
@@ -44,22 +51,35 @@
                         </div>
                     </div>
 
+                    <div class="card-title">
+                        <label class="col-sm-11" style="font-size: large;">Add Multiple Quantity</label>
+                        <button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button>
+                    </div>
+
                     <table class="table table-bordered" formArrayName="quantities">
-                        <tr>
-                            <th colspan="2">Add Multiple Quantity:</th>
-                            <th width="150px"><button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button></th>
-                        </tr>
-                        <tr *ngFor="let quantity of quantities().controls; index as i" [formGroupName]="i">
-                            <td>
-                                Quantity: <input type="text" formControlName="qty" class="form-control">
-                            </td>
-                            <td>
-                                Price: <input type="text" formControlName="price" class="form-control">
-                            </td>
-                            <td>
-                                <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
-                            </td>
-                        </tr>
+                        <thead>
+                            <th>#</th>
+                            <th>T-Shirt Name</th>
+                            <th>T-Shirt Number</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Sponsor FC</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let quantity of quantities().controls; index as i" [formGroupName]="i">
+                                <td style="text-align: center;"> {{i}} </td>
+                                <td> <input type="text" formControlName="t_shirt_name" class="form-control" /> </td>
+                                <td> <input type="text" formControlName="t_shirt_number" class="form-control" /> </td>
+                                <td>
+                                    <input type="text" formControlName="size" class="form-control" />
+                                </td>
+                                <td> <input type="text" formControlName="price" class="form-control" /> </td>
+                                <td> <input type="text" formControlName="sponsor_fc" class="form-control" /> </td>
+                                <td style="text-align: center;">
+                                    <button (click)="removeQuantity(i)" class="btn btn-danger">-</button> </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </form>
             </div>
